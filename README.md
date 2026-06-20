@@ -84,6 +84,9 @@ OPENROUTER_API_KEY=your_api_key_here
 
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
+
+Server ko background me chalane ke liye
+nohup uvicorn app:app --host 0.0.0.0 --port 8000 > app.log 2>&1 &
 ```
 
 Open browser:
