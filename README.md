@@ -90,7 +90,8 @@ Open browser:
 
 ```text
 http://YOUR_SERVER_IP:8000
-```
+<img width="1258" height="725" alt="image" src="https://github.com/user-attachments/assets/6e42f4f7-a67d-4d8e-9c0e-a942a717bef4" />
+
 
 ## 📸 Demo
 
