@@ -81,6 +81,8 @@ OPENROUTER_API_KEY=your_api_key_here
 ```
 
 ### Run Application
+restart server uvicorn
+pkill -f uvicorn
 
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
