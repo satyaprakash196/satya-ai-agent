@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Satya AI Agent</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            max-width:800px;
+            margin:auto;
+            padding:20px;
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        #chat{
+            border:1px solid #ccc;
+            min-height:300px;
+            padding:15px;
+            margin-bottom:10px;
+        }
+
+        input{
+            width:75%;
+            padding:10px;
+        }
+
+        button{
+            padding:10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🤖 Satya AI Agent</h1>
+
+<div id="chat"></div>
+
+<input type="text" id="message" placeholder="Type message...">
+<button onclick="sendMessage()">Send</button>
+
+<script>
+async function sendMessage(){
+
+    const msg = document.getElementById("message").value;
+
+    const response = await fetch("/chat",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            message:msg
+        })
+    });
+
+    const data = await response.json();
+
+    document.getElementById("chat").innerHTML +=
+        "<p><b>You:</b> "+msg+"</p>" +
+        "<p><b>Satya AI:</b> "+data.reply+"</p>";
+
+    document.getElementById("message").value="";
+}
+</script>
+
+</body>
+</html>
